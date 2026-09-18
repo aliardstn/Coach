@@ -31,7 +31,7 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 6px
 .manual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.manual-field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.manual-field input,.manual-field select{width:100%}.manual-entry{padding:11px 0;border-bottom:1px solid var(--line)}.manual-entry:last-child{border-bottom:0}.exercise-entry{display:grid;grid-template-columns:1.5fr .7fr .7fr auto;gap:7px;align-items:end;margin:8px 0}.activity-pill{font-size:10px;border:1px solid var(--line);border-radius:999px;padding:4px 7px;color:var(--muted)}
 @media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr)}.set{grid-template-columns:34px 1fr 1fr 42px}.hero h2{font-size:25px}}
 
-.anatomy-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.anatomy-card{overflow:hidden}.anatomy{display:flex;justify-content:center;padding:8px}.anatomy svg{width:min(100%,360px);height:auto;filter:drop-shadow(0 15px 25px #0005)}.muscle{fill:#303738;stroke:#66706f;stroke-width:2;cursor:pointer;transition:fill .2s,filter .2s,transform .2s}.muscle:hover{filter:brightness(1.35)}.muscle.hot{fill:#a7c62d;stroke:#d7ff3f;filter:drop-shadow(0 0 7px #d7ff3f55)}.muscle.warn{fill:#8c6730;stroke:#d9a85b}.muscle.ready{fill:#303738}.muscle-selected{margin:8px 0 0;padding:13px;border:1px solid var(--line);border-radius:12px;color:var(--muted);text-align:center}.rec-row{padding:12px 0;border-bottom:1px solid var(--line)}.rec-row:last-child{border-bottom:0}.rec-name{font-weight:750}.rec-meta{font-size:11px;color:var(--muted)}.rec-bar{height:8px;background:#262b2c;border-radius:99px;overflow:hidden;margin-top:7px}.rec-bar i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .5s}.rec-bar i.low{background:#9b7a43}.recovery-chip{font-size:11px;padding:4px 7px;border-radius:999px;background:#202627;color:var(--muted)}.recovery-chip.ready{color:var(--accent)}.recovery-chip.low{color:#e0b46a}.workout .exercise{animation:rise .35s ease both}.workout .exercise:nth-child(2){animation-delay:.04s}.workout .exercise:nth-child(3){animation-delay:.08s}.workout .exercise:nth-child(4){animation-delay:.12s}.workout .exercise:nth-child(5){animation-delay:.16s}.workout .exercise:nth-child(6){animation-delay:.2s}@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}.pulse{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.02)}}.exercise.done-card{border-color:#536326;box-shadow:0 0 0 1px #d7ff3f22,0 8px 24px #d7ff3f08}
+ .anatomy-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:14px} .anatomy-card{overflow:hidden}.anatomy-stage{height:610px;display:flex;align-items:center;justify-content:center;perspective:1100px;touch-action:none;cursor:grab;user-select:none;overflow:hidden;position:relative}.anatomy-stage.dragging{cursor:grabbing}.anatomy-orbit{width:330px;height:570px;position:relative;transform-style:preserve-3d;transition:transform .08s linear}.body-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;transform-style:preserve-3d}.body-face.back{transform:rotateY(180deg)}.body-face svg{width:100%;height:100%;filter:drop-shadow(0 22px 28px #0008)}.body-sil{fill:url(#bodyGrad);stroke:#596363;stroke-width:2}.muscle{fill:#252c2d;stroke:#6d7776;stroke-width:1.8;cursor:pointer;transition:fill .2s,filter .2s,transform .2s}.muscle:hover{filter:brightness(1.35)}.muscle.hot{fill:#b4d52d;stroke:#d7ff3f;filter:drop-shadow(0 0 9px #d7ff3f66)}.muscle.warn{fill:#956c32;stroke:#e0b46a}.muscle.ready{fill:#252c2d}.anatomy-controls{display:flex;gap:7px;justify-content:center;margin:6px 0 10px}.anatomy-controls .btn{min-width:78px}.anatomy-hint{text-align:center;color:var(--muted);font-size:11px;margin-top:-2px}.anatomy-glow{position:absolute;width:220px;height:420px;border-radius:50%;background:radial-gradient(ellipse,#d7ff3f16,transparent 65%);pointer-events:none}.anatomy-card{overflow:hidden}.anatomy{display:flex;justify-content:center;padding:8px}.anatomy svg{width:min(100%,360px);height:auto;filter:drop-shadow(0 15px 25px #0005)}.muscle{fill:#303738;stroke:#66706f;stroke-width:2;cursor:pointer;transition:fill .2s,filter .2s,transform .2s}.muscle:hover{filter:brightness(1.35)}.muscle.hot{fill:#a7c62d;stroke:#d7ff3f;filter:drop-shadow(0 0 7px #d7ff3f55)}.muscle.warn{fill:#8c6730;stroke:#d9a85b}.muscle.ready{fill:#303738}.muscle-selected{margin:8px 0 0;padding:13px;border:1px solid var(--line);border-radius:12px;color:var(--muted);text-align:center}.rec-row{padding:12px 0;border-bottom:1px solid var(--line)}.rec-row:last-child{border-bottom:0}.rec-name{font-weight:750}.rec-meta{font-size:11px;color:var(--muted)}.rec-bar{height:8px;background:#262b2c;border-radius:99px;overflow:hidden;margin-top:7px}.rec-bar i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .5s}.rec-bar i.low{background:#9b7a43}.recovery-chip{font-size:11px;padding:4px 7px;border-radius:999px;background:#202627;color:var(--muted)}.recovery-chip.ready{color:var(--accent)}.recovery-chip.low{color:#e0b46a}.workout .exercise{animation:rise .35s ease both}.workout .exercise:nth-child(2){animation-delay:.04s}.workout .exercise:nth-child(3){animation-delay:.08s}.workout .exercise:nth-child(4){animation-delay:.12s}.workout .exercise:nth-child(5){animation-delay:.16s}.workout .exercise:nth-child(6){animation-delay:.2s}@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}.pulse{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.02)}}.exercise.done-card{border-color:#536326;box-shadow:0 0 0 1px #d7ff3f22,0 8px 24px #d7ff3f08}
 @media(max-width:760px){.anatomy-wrap{grid-template-columns:1fr}.anatomy-card{order:0}.recovery-card{order:1}}
 
 .exercise-bank-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.bank-card{background:#101313;border:1px solid var(--line);border-radius:14px;padding:14px}.bank-card h3{margin:0 0 5px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#202627;color:var(--muted)}.filters{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:8px}.program-day{border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;background:#101313}.program-ex{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);gap:8px}.program-ex:last-child{border-bottom:0}.builder-row{display:grid;grid-template-columns:1.4fr .6fr .7fr auto;gap:7px;align-items:end}.mini{font-size:11px;color:var(--muted)}.empty{padding:22px;text-align:center;border:1px dashed #45504e;border-radius:14px;color:var(--muted)}
@@ -163,31 +163,45 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 6px
     <div class="card anatomy-card">
       <div class="row"><h3>Muscle map</h3><span class="muted">Tap a region</span></div>
       <div class="anatomy" id="anatomy">
-        <svg viewBox="0 0 360 620" role="img" aria-label="Interactive front and back muscle map">
-          <defs>
-            <linearGradient id="skin" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#343b3c"/><stop offset="1" stop-color="#202526"/></linearGradient>
-          </defs>
-          <g class="body-outline" opacity=".9">
-            <circle cx="180" cy="48" r="30" fill="url(#skin)"/>
-            <path d="M153 82 Q180 96 207 82 L222 108 L210 158 L202 205 L210 260 L201 342 L190 420 L180 510 L170 420 L159 342 L150 260 L158 205 L150 158 L138 108Z" fill="url(#skin)"/>
-            <path d="M138 108 L103 135 L78 213 L98 222 L137 160 M222 108 L257 135 L282 213 L262 222 L223 160" fill="url(#skin)"/>
-            <path d="M159 342 L125 370 L113 465 L145 465 L174 365 M201 342 L235 370 L247 465 L215 465 L186 365" fill="url(#skin)"/>
-            <path d="M145 465 L140 570 L168 570 L180 510 L192 570 L220 570 L215 465" fill="url(#skin)"/>
-          </g>
-          <g id="musclePaths">
-            <path class="muscle pectorals" data-muscle="Chest" d="M151 126 Q180 108 209 126 L202 165 Q180 177 158 165Z"/>
-            <path class="muscle delts" data-muscle="Shoulders" d="M139 112 Q151 105 159 122 L151 151 L132 143Z M221 112 Q209 105 201 122 L209 151 L228 143Z"/>
-            <path class="muscle biceps" data-muscle="Biceps" d="M130 145 L150 151 L140 205 L121 196Z M230 145 L210 151 L220 205 L239 196Z"/>
-            <path class="muscle triceps" data-muscle="Triceps" d="M121 143 L132 143 L121 199 L105 211 L103 198Z M239 143 L228 143 L239 199 L255 211 L257 198Z"/>
-            <path class="muscle abs" data-muscle="Abs" d="M161 169 L199 169 L202 260 L158 260Z"/>
-            <path class="muscle quads" data-muscle="Quads" d="M158 265 L180 260 L176 350 L151 390 L137 355Z M202 265 L180 260 L184 350 L209 390 L223 355Z"/>
-            <path class="muscle calves" data-muscle="Calves" d="M145 390 L160 410 L158 510 L140 570 L130 545Z M215 390 L200 410 L202 510 L220 570 L230 545Z"/>
-            <path class="muscle lats" data-muscle="Back" d="M153 155 L180 175 L207 155 L212 235 L180 265 L148 235Z"/>
-            <path class="muscle glutes" data-muscle="Glutes" d="M148 265 Q180 250 212 265 L207 330 Q180 350 153 330Z"/>
-            <path class="muscle hamstrings" data-muscle="Hamstrings" d="M153 330 L177 350 L166 430 L143 430Z M207 330 L183 350 L194 430 L217 430Z"/>
-          </g>
-        </svg>
-      </div>
+        <div class="anatomy-stage" id="anatomyStage">
+          <div class="anatomy-glow"></div>
+          <div class="anatomy-orbit" id="anatomyOrbit">
+            <div class="body-face front">
+              <svg viewBox="0 0 300 570" role="img" aria-label="Front muscle map">
+                <defs><linearGradient id="bodyGrad" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#3c4545"/><stop offset=".5" stop-color="#242a2b"/><stop offset="1" stop-color="#141818"/></linearGradient></defs>
+                <circle cx="150" cy="45" r="27" class="body-sil"/><path class="body-sil" d="M127 75 Q150 88 173 75 L191 108 L183 170 L190 250 L178 325 L166 402 L150 505 L134 402 L122 325 L110 250 L117 170 L109 108Z"/>
+                <path class="body-sil" d="M111 105 L78 128 L52 210 L73 219 L115 154 M189 105 L222 128 L248 210 L227 219 L185 154Z"/>
+                <path class="body-sil" d="M122 322 L94 350 L84 455 L111 455 L143 350 M178 322 L206 350 L216 455 L189 455 L157 350Z"/>
+                <path class="body-sil" d="M111 455 L106 548 L132 548 L150 505 L168 548 L194 548 L189 455Z"/>
+                <path class="muscle" data-muscle="Shoulders" d="M109 108 Q123 99 132 119 L122 151 L98 143Z M191 108 Q177 99 168 119 L178 151 L202 143Z"/>
+                <path class="muscle" data-muscle="Chest" d="M125 125 Q150 108 175 125 L169 165 Q150 176 131 165Z"/>
+                <path class="muscle" data-muscle="Biceps" d="M99 145 L122 151 L112 207 L91 196Z M201 145 L178 151 L188 207 L209 196Z"/>
+                <path class="muscle" data-muscle="Triceps" d="M91 143 L100 143 L90 199 L74 213 L76 196Z M209 143 L200 143 L210 199 L226 213 L224 196Z"/>
+                <path class="muscle" data-muscle="Abs" d="M132 169 L168 169 L173 258 L127 258Z"/>
+                <path class="muscle" data-muscle="Quads" d="M127 262 L150 258 L145 350 L120 397 L105 355Z M173 262 L150 258 L155 350 L180 397 L195 355Z"/>
+                <path class="muscle" data-muscle="Calves" d="M112 397 L130 415 L126 505 L108 548 L96 520Z M188 397 L170 415 L174 505 L192 548 L204 520Z"/>
+              </svg>
+            </div>
+            <div class="body-face back">
+              <svg viewBox="0 0 300 570" role="img" aria-label="Back muscle map">
+                <defs><linearGradient id="bodyGradBack" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#3c4545"/><stop offset=".5" stop-color="#242a2b"/><stop offset="1" stop-color="#141818"/></linearGradient></defs>
+                <circle cx="150" cy="45" r="27" class="body-sil" fill="url(#bodyGradBack)"/><path class="body-sil" d="M127 75 Q150 88 173 75 L191 108 L183 170 L190 250 L178 325 L166 402 L150 505 L134 402 L122 325 L110 250 L117 170 L109 108Z" fill="url(#bodyGradBack)"/>
+                <path class="body-sil" d="M111 105 L78 128 L52 210 L73 219 L115 154 M189 105 L222 128 L248 210 L227 219 L185 154Z"/>
+                <path class="body-sil" d="M122 322 L94 350 L84 455 L111 455 L143 350 M178 322 L206 350 L216 455 L189 455 L157 350Z"/>
+                <path class="body-sil" d="M111 455 L106 548 L132 548 L150 505 L168 548 L194 548 L189 455Z"/>
+                <path class="muscle" data-muscle="Shoulders" d="M109 108 Q123 99 132 119 L122 151 L98 143Z M191 108 Q177 99 168 119 L178 151 L202 143Z"/>
+                <path class="muscle" data-muscle="Back" d="M127 126 L150 144 L173 126 L181 230 L150 267 L119 230Z"/>
+                <path class="muscle" data-muscle="Triceps" d="M91 143 L101 143 L91 200 L75 213 L76 196Z M209 143 L199 143 L209 200 L225 213 L224 196Z"/>
+                <path class="muscle" data-muscle="Glutes" d="M120 263 Q150 248 180 263 L177 326 Q150 349 123 326Z"/>
+                <path class="muscle" data-muscle="Hamstrings" d="M123 328 L145 347 L137 430 L114 430Z M177 328 L155 347 L163 430 L186 430Z"/>
+                <path class="muscle" data-muscle="Calves" d="M112 397 L130 415 L126 505 L108 548 L96 520Z M188 397 L170 415 L174 505 L192 548 L204 520Z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="anatomy-controls"><button class="btn small" onclick="setAnatomyView('front')">Front</button><button class="btn small" onclick="setAnatomyView('back')">Back</button><button class="btn small" onclick="setAnatomyView('reset')">Reset</button></div>
+        <div class="anatomy-hint">Drag with your finger or mouse to rotate • tap a muscle for details</div>
+      </div></div>
       <div class="muscle-selected" id="muscleSelected">Select a muscle</div>
     </div>
 
@@ -198,7 +212,7 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 6px
   </div>
 
   <div class="card">
-    <h3>How Forge estimates recovery</h3>
+    <h3>How ASCEND estimates recovery</h3>
     <p class="muted">Each completed set creates a temporary recovery load for its primary muscle group. The load decays over time; your fatigue rating adds a small whole-body adjustment. This is a training-management estimate, not a medical measurement.</p>
   </div>
 </section>
@@ -256,6 +270,18 @@ let builder=null;
 
 let state=JSON.parse(localStorage.getItem("forgeState")||'{"logs":[],"weight":198,"fatigue":3}');
 state.logs=state.logs||[]; state.weight=Number(state.weight)||198; state.fatigue=Number(state.fatigue)||3;
+// Migration: enrich older/manual strength logs so they contribute to muscle recovery.
+state.logs.forEach(log=>{
+  if(log.activityType==='strength' && !log.volumeByMuscle && Array.isArray(log.manualExercises)){
+    const v={};
+    log.manualExercises.forEach(row=>{
+      const match=exerciseBank.find(e=>e[0].toLowerCase()===String(row.exercise||'').trim().toLowerCase());
+      const muscle=match?.[1]||'Other'; const sets=Number(row.sets)||0; if(sets) v[muscle]=(v[muscle]||0)+sets;
+    });
+    if(Object.keys(v).length) log.volumeByMuscle=v;
+  }
+});
+localStorage.setItem('forgeState',JSON.stringify(state));
 let settings=JSON.parse(localStorage.getItem("forgeSettings")||'{"rest":90}');
 let timerSeconds=0,timerInterval=null,timerRunning=false;
 
@@ -369,8 +395,8 @@ function addManualStrengthRow(){manualStrengthRows.push({exercise:"",sets:"",wei
 function removeManualStrengthRow(i){manualStrengthRows.splice(i,1);if(!manualStrengthRows.length)manualStrengthRows=[{exercise:"",sets:"",weight:"",reps:""}];renderManualStrengthRows()}
 function renderManualStrengthRows(){const box=document.getElementById("manualStrengthRows");if(!box)return;box.innerHTML=manualStrengthRows.map((r,i)=>`<div class="exercise-entry"><div class="manual-field"><label>Exercise</label><input value="${r.exercise.replace(/"/g,'&quot;')}" onchange="manualStrengthRows[${i}].exercise=this.value" placeholder="e.g. Bench Press"></div><div class="manual-field"><label>Sets</label><input type="number" min="1" value="${r.sets}" onchange="manualStrengthRows[${i}].sets=this.value"></div><div class="manual-field"><label>Weight × reps</label><input value="${r.weight}${r.weight&&r.reps?' × ':''}${r.reps}" onchange="updateManualWeightReps(${i},this.value)" placeholder="80 × 10"></div><button class="btn small danger" onclick="removeManualStrengthRow(${i})">×</button></div>`).join("")}
 function updateManualWeightReps(i,v){const parts=v.split(/\s*[x×]\s*/i);manualStrengthRows[i].weight=parts[0]||"";manualStrengthRows[i].reps=parts[1]||""}
-function saveManualStrength(){const date=document.getElementById("manualDate").value||new Date().toISOString(),name=document.getElementById("manualName").value.trim()||"Weightlifting",rows=manualStrengthRows.filter(r=>r.exercise.trim()),sets=rows.reduce((a,r)=>a+(Number(r.sets)||0),0);if(!rows.length){alert("Add at least one exercise.");return}state.logs.unshift({date:new Date(date).toISOString(),activityType:"strength",dayName:name,programName:"Manual",sets,manualExercises:JSON.parse(JSON.stringify(rows)),duration:Number(document.getElementById("manualDuration").value)||0,notes:document.getElementById("manualNotes").value||""});state.logs=state.logs.slice(0,100);save();manualStrengthRows=[{exercise:"",sets:"",weight:"",reps:""}];renderManualHistory();renderProgress();alert("Weightlifting workout saved.")}
-function saveManualEndurance(){const type=document.getElementById("manualType").value,date=document.getElementById("manualDate").value||new Date().toISOString(),name=document.getElementById("manualName").value.trim()||(type==="cycling"?"Bike Ride":"Cardio"),duration=Number(document.getElementById("manualDuration").value)||0,distance=Number(document.getElementById("manualDistance").value)||0; if(!duration&&!distance){alert("Enter at least a duration or distance.");return}state.logs.unshift({date:new Date(date).toISOString(),activityType:type,dayName:name,programName:"Manual",sets:0,duration,distance,avgSpeed:Number(document.getElementById("manualAvgSpeed")?.value)||0,elevation:Number(document.getElementById("manualElevation")?.value)||0,avgHR:Number(document.getElementById("manualHR")?.value)||0,maxHR:Number(document.getElementById("manualMaxHR")?.value)||0,calories:Number(document.getElementById("manualCalories")?.value)||0,notes:document.getElementById("manualNotes").value||""});state.logs=state.logs.slice(0,100);save();renderManualHistory();renderProgress();alert(`${name} saved.`)}
+function saveManualStrength(){const date=document.getElementById("manualDate").value||new Date().toISOString(),name=document.getElementById("manualName").value.trim()||"Weightlifting",rows=manualStrengthRows.filter(r=>r.exercise.trim()),sets=rows.reduce((a,r)=>a+(Number(r.sets)||0),0);if(!rows.length){alert("Add at least one exercise.");return}const volumeByMuscle={};rows.forEach(r=>{const match=exerciseBank.find(e=>e[0].toLowerCase()===r.exercise.trim().toLowerCase());const muscle=match?.[1]||"Other";const n=Number(r.sets)||0;if(n)volumeByMuscle[muscle]=(volumeByMuscle[muscle]||0)+n;});state.logs.unshift({date:new Date(date).toISOString(),activityType:"strength",dayName:name,programName:"Manual",sets,volumeByMuscle,manualExercises:JSON.parse(JSON.stringify(rows)),duration:Number(document.getElementById("manualDuration").value)||0,notes:document.getElementById("manualNotes").value||""});state.logs=state.logs.slice(0,100);save();manualStrengthRows=[{exercise:"",sets:"",weight:"",reps:""}];renderManualHistory();renderProgress();renderRecovery();alert("Weightlifting workout saved — recovery updated.")}
+function saveManualEndurance(){const type=document.getElementById("manualType").value,date=document.getElementById("manualDate").value||new Date().toISOString(),name=document.getElementById("manualName").value.trim()||(type==="cycling"?"Bike Ride":"Cardio"),duration=Number(document.getElementById("manualDuration").value)||0,distance=Number(document.getElementById("manualDistance").value)||0; if(!duration&&!distance){alert("Enter at least a duration or distance.");return}state.logs.unshift({date:new Date(date).toISOString(),activityType:type,dayName:name,programName:"Manual",sets:0,volumeByMuscle:type==="cycling"?{Quads:1,Hamstrings:1,Glutes:1,Calves:1}:{},duration,distance,avgSpeed:Number(document.getElementById("manualAvgSpeed")?.value)||0,elevation:Number(document.getElementById("manualElevation")?.value)||0,avgHR:Number(document.getElementById("manualHR")?.value)||0,maxHR:Number(document.getElementById("manualMaxHR")?.value)||0,calories:Number(document.getElementById("manualCalories")?.value)||0,notes:document.getElementById("manualNotes").value||""});state.logs=state.logs.slice(0,100);save();renderManualHistory();renderProgress();alert(`${name} saved.`)}
 function renderManualHistory(){const box=document.getElementById("manualHistory");if(!box)return;const logs=state.logs.filter(x=>x.programName==="Manual");box.innerHTML=logs.length?logs.slice(0,20).map(x=>{const icon=x.activityType==="cycling"?"🚴":x.activityType==="strength"?"🏋️":"🏃";const details=x.activityType==="strength"?`${x.sets} sets · ${(x.manualExercises||[]).map(e=>`${e.exercise} ${e.weight?e.weight+'×':''}${e.reps||''}`).join(" · ")}`:`${x.duration||0} min${x.distance?` · ${x.distance} km`:""}${x.activityType==="cycling"&&x.avgSpeed?` · ${x.avgSpeed} km/h`:""}${x.activityType==="cycling"&&x.elevation?` · +${x.elevation} m`:""}`;return `<div class="manual-entry"><div class="row"><span><strong>${icon} ${x.dayName}</strong><br><small class="muted">${new Date(x.date).toLocaleString()}</small></span><span class="activity-pill">Manual</span></div><small class="muted">${details}</small>${x.notes?`<br><small class="muted">${x.notes}</small>`:""}</div>`}).join(""):"<p class='muted'>No manual activities yet.</p>"}
 function renderProgress(){
  document.getElementById("progWeight").textContent=state.weight.toFixed(1);document.getElementById("dashWeight").textContent=state.weight.toFixed(1)+" lb";
@@ -404,6 +430,15 @@ function selectMuscle(name){
  const data=recoveryData(),v=data[name]??100;document.getElementById("muscleSelected").innerHTML=`<strong>${name}</strong> · <span class="accent">${v}% recovered</span><br><small>${recoveryLabel(v)} · based on recent logged training</small>`;
  document.querySelectorAll(".muscle").forEach(p=>p.classList.toggle("pulse",p.dataset.muscle===name));
 }
+let anatomyRotation=0,anatomyTilt=0,draggingAnatomy=false,lastAnatomyX=0,lastAnatomyY=0;
+function applyAnatomyTransform(){const orbit=document.getElementById('anatomyOrbit');if(orbit)orbit.style.transform=`rotateX(${anatomyTilt}deg) rotateY(${anatomyRotation}deg)`}
+function setAnatomyView(view){if(view==='front')anatomyRotation=0;else if(view==='back')anatomyRotation=180;else {anatomyRotation=0;anatomyTilt=0} applyAnatomyTransform()}
+function anatomyPointerDown(e){draggingAnatomy=true;lastAnatomyX=e.clientX;lastAnatomyY=e.clientY;document.getElementById('anatomyStage')?.classList.add('dragging')}
+function anatomyPointerMove(e){if(!draggingAnatomy)return;const dx=e.clientX-lastAnatomyX,dy=e.clientY-lastAnatomyY;anatomyRotation+=dx*.65;anatomyTilt=Math.max(-12,Math.min(12,anatomyTilt-dy*.18));lastAnatomyX=e.clientX;lastAnatomyY=e.clientY;applyAnatomyTransform()}
+function anatomyPointerUp(){draggingAnatomy=false;document.getElementById('anatomyStage')?.classList.remove('dragging')}
+const anatomyStage=document.getElementById('anatomyStage');if(anatomyStage){anatomyStage.addEventListener('pointerdown',anatomyPointerDown);anatomyStage.addEventListener('pointermove',anatomyPointerMove);anatomyStage.addEventListener('pointerup',anatomyPointerUp);anatomyStage.addEventListener('pointercancel',anatomyPointerUp);anatomyStage.addEventListener('pointerleave',anatomyPointerUp);}
+applyAnatomyTransform();
+
 function startTimer(sec,label){closeTimer();timerSeconds=sec||settings.rest;timerRunning=true;document.getElementById("timerLabel").textContent=label||"REST";document.getElementById("timer").classList.remove("hidden");updateTimer();timerInterval=setInterval(()=>{if(timerRunning){timerSeconds--;updateTimer();if(timerSeconds<=0)finishTimer()}},1000)}
 function updateTimer(){let m=Math.floor(Math.max(0,timerSeconds)/60),s=Math.max(0,timerSeconds)%60;document.getElementById("timerTime").textContent=`${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`}
 function toggleTimer(){timerRunning=!timerRunning;document.getElementById("timerPause").textContent=timerRunning?"Pause":"Resume"}

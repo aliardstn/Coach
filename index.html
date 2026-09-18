@@ -31,41 +31,49 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 6px
 .manual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.manual-field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.manual-field input,.manual-field select{width:100%}.manual-entry{padding:11px 0;border-bottom:1px solid var(--line)}.manual-entry:last-child{border-bottom:0}.exercise-entry{display:grid;grid-template-columns:1.7fr .65fr .8fr .65fr auto;gap:7px;align-items:end;margin:8px 0}.activity-pill{font-size:10px;border:1px solid var(--line);border-radius:999px;padding:4px 7px;color:var(--muted)}
 @media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr)}.set{grid-template-columns:34px 1fr 1fr 42px}.hero h2{font-size:25px}}
 
- .anatomy-wrap{display:grid;grid-template-columns:1.28fr .72fr;gap:14px}
-.anatomy-card{overflow:hidden;background:linear-gradient(145deg,#101719,#07090a);border:1px solid #2b3537;box-shadow:0 18px 55px #0008}
-.anatomy-stage{min-height:700px;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:grab;user-select:none;overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 42%,#1d2a26 0,#0c1112 42%,#07090a 78%);border-radius:18px;padding:34px 18px 20px}
-.anatomy-stage:before{content:'';position:absolute;inset:14px;border:1px solid #ffffff0a;border-radius:18px;box-shadow:inset 0 0 110px #000b;pointer-events:none}
+ .anatomy-wrap{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,.72fr);gap:16px;align-items:stretch}
+.anatomy-card{overflow:hidden;background:linear-gradient(145deg,#0c151a,#071013 70%,#05090b);border:1px solid #26353d;box-shadow:0 22px 70px #000b}
+.anatomy-card>.row{padding:2px 2px 0}
+.anatomy-stage{min-height:760px;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:grab;user-select:none;overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 44%,#152823 0,#0b1416 38%,#05090b 77%);border:1px solid #1b2a2f;border-radius:20px;padding:34px 8px 12px}
+.anatomy-stage:before{content:'';position:absolute;inset:12px;border:1px solid #ffffff0b;border-radius:18px;box-shadow:inset 0 0 120px #000c;pointer-events:none}
+.anatomy-stage:after{content:'LIVE MUSCLE HEATMAP';position:absolute;left:22px;top:20px;font-size:10px;letter-spacing:4px;color:#9aa9a7;opacity:.82}
 .anatomy-stage.dragging{cursor:grabbing}
-.anatomy-stage:after{content:'LIVE MUSCLE HEATMAP';position:absolute;left:20px;top:18px;font-size:10px;letter-spacing:4px;color:#aeb9b5;opacity:.8}
-.anatomy-glow{position:absolute;width:520px;height:560px;border-radius:50%;background:radial-gradient(ellipse,#4bd87a0c,transparent 66%);pointer-events:none}
-.anatomy-orbit{width:100%;max-width:610px;height:620px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:end;justify-items:center;z-index:2;transition:transform .12s ease;transform-origin:center bottom}
-.body-face{position:relative;width:100%;max-width:285px;height:600px;display:flex;align-items:center;justify-content:center}
-.body-face svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 22px 24px #000d)}
-.body-outline{fill:#111719;stroke:#657171;stroke-width:2.1;stroke-linejoin:round}
-.body-detail{fill:none;stroke:#566363;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
-.muscle{fill:#2d3738;stroke:#7e8a88;stroke-width:1.25;cursor:pointer;transition:fill .2s,filter .2s,stroke .2s,opacity .2s}
-.muscle:hover{filter:brightness(1.2);stroke:#fff;stroke-width:1.8}
-.muscle.recovery-red{fill:#ff5c63;stroke:#ff9a9e;filter:drop-shadow(0 0 10px #ff5c6366)}
-.muscle.recovery-orange{fill:#ff9a3d;stroke:#ffc27d;filter:drop-shadow(0 0 9px #ff9a3d55)}
-.muscle.recovery-yellow{fill:#f5d943;stroke:#fff09a;filter:drop-shadow(0 0 8px #f5d94344)}
-.muscle.recovery-green{fill:#4bd87a;stroke:#9af0b7;filter:drop-shadow(0 0 9px #4bd87a44)}
-.muscle.hot{filter:drop-shadow(0 0 13px #ff5c6380)}
-.muscle.warn{filter:drop-shadow(0 0 10px #ff9a3d70)}
-.muscle.ready{filter:drop-shadow(0 0 9px #4bd87a50)}
+.anatomy-glow{position:absolute;width:720px;height:620px;border-radius:50%;background:radial-gradient(ellipse,#56e58b12 0%,#56e58b05 42%,transparent 70%);pointer-events:none}
+.anatomy-orbit{width:100%;max-width:900px;height:690px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;justify-items:center;z-index:2;transition:transform .14s ease;transform-origin:center center}
+.body-face{position:relative;width:100%;max-width:390px;height:675px;display:flex;align-items:center;justify-content:center}
+.body-face svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 24px 28px #000e)}
+.body-outline{stroke:#7f8d8d;stroke-width:2.1;stroke-linejoin:round}
+.body-base{fill:url(#bodySkin);stroke:#6e7d7d;stroke-width:2}
+.body-dark{fill:#111a1c;stroke:#596969;stroke-width:1.5}
+.body-detail{fill:none;stroke:#71807e;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;opacity:.72}
+.muscle{fill:#263133;stroke:#899695;stroke-width:1.25;cursor:pointer;transition:fill .22s,filter .22s,stroke .22s,transform .22s;transform-box:fill-box;transform-origin:center}
+.muscle:hover{filter:brightness(1.18) drop-shadow(0 0 9px #fff2);stroke:#fff;stroke-width:1.8}
+.muscle.recovery-red{fill:#ff535d;stroke:#ff9a9f;filter:drop-shadow(0 0 12px #ff535d75)}
+.muscle.recovery-orange{fill:#ff9338;stroke:#ffc47f;filter:drop-shadow(0 0 10px #ff933866)}
+.muscle.recovery-yellow{fill:#f2d63b;stroke:#fff19b;filter:drop-shadow(0 0 10px #f2d63b55)}
+.muscle.recovery-green{fill:#43df7b;stroke:#9cf4ba;filter:drop-shadow(0 0 11px #43df7b55)}
+.muscle.hot{filter:drop-shadow(0 0 15px #ff535d9a)}
+.muscle.warn{filter:drop-shadow(0 0 11px #ff933880)}
+.muscle.ready{filter:drop-shadow(0 0 10px #43df7b65)}
 .muscle.pulse{animation:musclePulse 1.05s ease-in-out infinite}
-@keyframes musclePulse{50%{filter:brightness(1.22) drop-shadow(0 0 16px currentColor)}}
-.figure-label{font-size:10px;letter-spacing:3px;fill:#899491}
-.figure-shadow{fill:#000;opacity:.55;filter:blur(5px)}
-.heat-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 4px 0}
+@keyframes musclePulse{50%{filter:brightness(1.22) drop-shadow(0 0 18px currentColor)}}
+.figure-label{font-size:10px;letter-spacing:3px;fill:#879492}
+.figure-shadow{fill:#000;opacity:.55;filter:blur(6px)}
+.anatomy-label{font-size:11px;fill:#f3f7f5;font-weight:700;letter-spacing:.15px}
+.anatomy-label-sub{font-size:9.5px;fill:#aab5b3}
+.anatomy-callout{stroke:#91a09e;stroke-width:1;opacity:.78;fill:none}
+.heat-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:13px 8px 0}
 .heat-key{display:flex;align-items:center;gap:7px;font-size:10px;color:#aab4b1;line-height:1.25}
-.heat-dot{width:10px;height:10px;border-radius:50%;box-shadow:0 0 8px currentColor;flex:0 0 auto}
-.heat-dot.red{background:#ff5c63;color:#ff5c63}.heat-dot.orange{background:#ff9a3d;color:#ff9a3d}.heat-dot.yellow{background:#f5d943;color:#f5d943}.heat-dot.green{background:#4bd87a;color:#4bd87a}
-.anatomy-controls{display:flex;gap:8px;justify-content:center;margin:13px 0 9px}.anatomy-controls .btn{min-width:88px}.anatomy-controls .btn.active{background:#1d2b2a;border-color:#6d7c79;box-shadow:0 0 0 1px #ffffff12 inset}
+.heat-dot{width:10px;height:10px;border-radius:50%;box-shadow:0 0 9px currentColor;flex:0 0 auto}
+.heat-dot.red{background:#ff535d;color:#ff535d}.heat-dot.orange{background:#ff9338;color:#ff9338}.heat-dot.yellow{background:#f2d63b;color:#f2d63b}.heat-dot.green{background:#43df7b;color:#43df7b}
+.anatomy-controls{display:flex;gap:8px;justify-content:center;margin:12px 0 8px}.anatomy-controls .btn{min-width:90px}.anatomy-controls .btn.active{background:#0e7cff;color:#fff;border-color:#3198ff;box-shadow:0 0 0 1px #62b4ff55 inset,0 0 22px #087dff2e}
 .anatomy-hint{text-align:center;color:var(--muted);font-size:11px;margin-top:0}
-.anatomy{padding:10px}.muscle-selected{margin:8px 0 0;padding:15px;border:1px solid #2d3838;border-radius:14px;color:var(--muted);text-align:center;background:linear-gradient(135deg,#0d1112,#111718)}
-.rec-row{padding:13px 0;border-bottom:1px solid var(--line)}.rec-row:last-child{border-bottom:0}.rec-name{font-weight:750}.rec-meta{font-size:11px;color:var(--muted)}.rec-bar{height:10px;background:#202627;border-radius:99px;overflow:hidden;margin-top:8px;box-shadow:inset 0 1px 2px #000}.rec-bar i{display:block;height:100%;border-radius:99px;transition:width .5s}.rec-bar i.red{background:linear-gradient(90deg,#ff5c63,#ff777d)}.rec-bar i.orange{background:linear-gradient(90deg,#ff8b32,#ffb35f)}.rec-bar i.yellow{background:linear-gradient(90deg,#d8be2e,#f5d943)}.rec-bar i.green{background:linear-gradient(90deg,#38b967,#4bd87a)}
-.recovery-chip{font-size:11px;padding:4px 8px;border-radius:999px;background:#202627;color:var(--muted)}.recovery-chip.ready{color:#7ff09e}.recovery-chip.low{color:#ffb05f}.workout .exercise{animation:rise .35s ease both}.workout .exercise:nth-child(2){animation-delay:.04s}.workout .exercise:nth-child(3){animation-delay:.08s}.workout .exercise:nth-child(4){animation-delay:.12s}.workout .exercise:nth-child(5){animation-delay:.16s}.workout .exercise:nth-child(6){animation-delay:.2s}@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}.exercise.done-card{border-color:#536326;box-shadow:0 0 0 1px #d7ff3f22,0 8px 24px #d7ff3f08}
-@media(max-width:760px){.anatomy-wrap{grid-template-columns:1fr}.anatomy-card{order:0}.recovery-card{order:1}.anatomy-stage{min-height:610px;padding:30px 5px 15px}.anatomy-orbit{height:545px;gap:0}.body-face{height:535px}.heat-legend{grid-template-columns:repeat(2,1fr)}}
+.anatomy{padding:10px}.muscle-selected{margin:8px 0 0;padding:15px;border:1px solid #2d3838;border-radius:14px;color:var(--muted);text-align:center;background:linear-gradient(135deg,#0b1214,#10191a)}
+.rec-row{padding:13px 0;border-bottom:1px solid var(--line)}.rec-row:last-child{border-bottom:0}.rec-name{font-weight:750}.rec-meta{font-size:11px;color:var(--muted)}.rec-bar{height:10px;background:#202b30;border-radius:99px;overflow:hidden;margin-top:8px;box-shadow:inset 0 1px 2px #000}.rec-bar i{display:block;height:100%;border-radius:99px;transition:width .5s}.rec-bar i.red{background:linear-gradient(90deg,#ff535d,#ff777d)}.rec-bar i.orange{background:linear-gradient(90deg,#ff8630,#ffb45e)}.rec-bar i.yellow{background:linear-gradient(90deg,#d6bc2d,#f2d63b)}.rec-bar i.green{background:linear-gradient(90deg,#37c66c,#43df7b)}
+.recovery-chip{font-size:11px;padding:4px 8px;border-radius:999px;background:#202a2d;color:var(--muted)}.recovery-chip.ready{color:#7ff09e}.recovery-chip.low{color:#ffb05f}.workout .exercise{animation:rise .35s ease both}.workout .exercise:nth-child(2){animation-delay:.04s}.workout .exercise:nth-child(3){animation-delay:.08s}.workout .exercise:nth-child(4){animation-delay:.12s}.workout .exercise:nth-child(5){animation-delay:.16s}.workout .exercise:nth-child(6){animation-delay:.2s}@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}.exercise.done-card{border-color:#536326;box-shadow:0 0 0 1px #d7ff3f22,0 8px 24px #d7ff3f08}
+@media(max-width:900px){.anatomy-wrap{grid-template-columns:1fr}.anatomy-stage{min-height:700px}.recovery-card{order:1}}
+@media(max-width:760px){.anatomy-stage{min-height:610px;padding:28px 2px 12px}.anatomy-orbit{height:555px;gap:0}.body-face{height:545px}.heat-legend{grid-template-columns:repeat(2,1fr)}.anatomy-label{font-size:9px}.anatomy-label-sub{font-size:8px}}
+
 
 .exercise-bank-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.bank-card{background:#101313;border:1px solid var(--line);border-radius:14px;padding:14px}.bank-card h3{margin:0 0 5px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#202627;color:var(--muted)}.filters{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:8px}.program-day{border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;background:#101313}.program-ex{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);gap:8px}.program-ex:last-child{border-bottom:0}.builder-row{display:grid;grid-template-columns:1.4fr .6fr .7fr auto;gap:7px;align-items:end}.mini{font-size:11px;color:var(--muted)}.empty{padding:22px;text-align:center;border:1px dashed #45504e;border-radius:14px;color:var(--muted)}
 
@@ -194,51 +202,115 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 6px
 
   <div class="anatomy-wrap">
     <div class="card anatomy-card">
-      <div class="row"><h3>Muscle map</h3><span class="muted">Tap a region</span></div>
+      <div class="row"><div><h3 style="margin-bottom:2px">Muscle Recovery Map</h3><span class="muted">Tap a muscle to see details</span></div><span class="muted">Live</span></div>
       <div class="anatomy" id="anatomy">
         <div class="anatomy-stage" id="anatomyStage">
           <div class="anatomy-glow"></div>
           <div class="anatomy-orbit" id="anatomyOrbit">
             <div class="body-face front">
-              <svg viewBox="0 0 260 600" role="img" aria-label="Front muscle recovery heatmap">
-                <ellipse class="figure-shadow" cx="130" cy="579" rx="63" ry="9"/>
-                <circle class="body-outline" cx="130" cy="53" r="30"/>
-                <path class="body-outline" d="M110 83 Q130 94 150 83 L164 110 Q179 122 184 149 L176 190 L183 255 L169 333 L158 412 L151 486 L130 525 L109 486 L102 412 L91 333 L77 255 L84 190 L76 149 Q81 122 96 110Z"/>
-                <path class="body-outline" d="M84 111 Q62 119 49 142 L30 207 L48 219 L78 168 L98 130Z M176 111 Q198 119 211 142 L230 207 L212 219 L182 168 L162 130Z"/>
-                <path class="body-outline" d="M102 328 L79 356 L72 454 L100 454 L121 397 L139 397 L160 454 L188 454 L181 356 L158 328Z"/>
-                <path class="body-outline" d="M100 454 L96 550 L118 550 L130 521 L142 550 L164 550 L160 454Z"/>
-
-                <path class="muscle" data-muscle="Shoulders" d="M96 112 Q77 117 68 136 Q65 151 78 160 Q91 158 104 143 L111 124Z M164 112 Q183 117 192 136 Q195 151 182 160 Q169 158 156 143 L149 124Z"/>
-                <path class="muscle" data-muscle="Chest" d="M112 126 Q130 115 148 126 L153 159 Q142 172 130 168 Q118 172 107 159Z"/>
-                <path class="muscle" data-muscle="Biceps" d="M79 157 Q92 162 104 145 L99 205 Q91 216 77 206 L70 187Z M181 157 Q168 162 156 145 L161 205 Q169 216 183 206 L190 187Z"/>
-                <path class="muscle" data-muscle="Triceps" d="M69 155 L80 157 L76 207 L61 218 L58 199Z M191 155 L180 157 L184 207 L199 218 L202 199Z"/>
-                <path class="muscle" data-muscle="Forearms" d="M61 218 L76 207 L82 267 L68 288 L53 268Z M199 218 L184 207 L178 267 L192 288 L207 268Z"/>
-                <path class="muscle" data-muscle="Abs" d="M113 169 L147 169 L150 258 Q130 269 110 258Z"/>
-                <path class="body-detail" d="M130 171 L130 258 M112 190 Q130 197 148 190 M112 216 Q130 223 148 216 M111 241 Q130 248 149 241"/>
-                <path class="muscle" data-muscle="Quads" d="M111 265 Q120 272 130 269 L126 345 L109 406 Q99 387 98 356 L103 306Z M149 265 Q140 272 130 269 L134 345 L151 406 Q161 387 162 356 L157 306Z"/>
-                <path class="muscle" data-muscle="Calves" d="M103 408 Q113 399 126 394 L122 486 L109 541 L96 516 L97 461Z M157 408 Q147 399 134 394 L138 486 L151 541 L164 516 L163 461Z"/>
-                <text x="130" y="594" text-anchor="middle" class="figure-label">FRONT</text>
+              <svg viewBox="0 0 420 700" role="img" aria-label="Front muscular recovery heatmap">
+                <defs>
+                  <linearGradient id="bodySkin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#263337"/><stop offset=".45" stop-color="#182326"/><stop offset="1" stop-color="#0c1214"/></linearGradient>
+                  <radialGradient id="headGlow"><stop stop-color="#334145"/><stop offset="1" stop-color="#11191c"/></radialGradient>
+                </defs>
+                <ellipse class="figure-shadow" cx="210" cy="676" rx="92" ry="12"/>
+                <ellipse cx="210" cy="72" rx="37" ry="47" fill="url(#headGlow)" class="body-outline"/>
+                <path class="body-base" d="M191 112 Q210 123 229 112 L239 142 Q271 150 293 176 Q303 196 296 227 L284 262 L286 311 L274 350 L266 398 L258 458 L248 531 L238 618 L182 618 L172 531 L162 458 L154 398 L146 350 L134 311 L136 262 L124 227 Q117 196 127 176 Q149 150 181 142Z"/>
+                <path class="body-dark" d="M125 173 Q98 175 83 204 L52 291 Q48 306 61 313 L75 317 L111 243 L145 190Z"/>
+                <path class="body-dark" d="M295 173 Q322 175 337 204 L368 291 Q372 306 359 313 L345 317 L309 243 L275 190Z"/>
+                <path class="body-dark" d="M61 313 L75 317 L91 384 L76 433 L61 420 L50 352Z"/>
+                <path class="body-dark" d="M359 313 L345 317 L329 384 L344 433 L359 420 L370 352Z"/>
+                <path class="body-dark" d="M157 365 Q182 381 210 376 Q238 381 263 365 L279 432 L266 506 L251 579 L239 653 L210 667 L181 653 L169 579 L154 506 L141 432Z"/>
+                <!-- delts -->
+                <path class="muscle" data-muscle="Shoulders" d="M181 147 Q153 146 132 169 Q125 186 136 202 Q151 217 176 199 L196 162Z"/>
+                <path class="muscle" data-muscle="Shoulders" d="M239 147 Q267 146 288 169 Q295 186 284 202 Q269 217 244 199 L224 162Z"/>
+                <!-- upper chest -->
+                <path class="muscle" data-muscle="Chest" d="M198 162 Q171 154 146 173 Q141 193 154 210 Q173 226 207 211 L208 176Z"/>
+                <path class="muscle" data-muscle="Chest" d="M222 162 Q249 154 274 173 Q279 193 266 210 Q247 226 213 211 L212 176Z"/>
+                <path class="body-detail" d="M210 170 L210 216"/>
+                <!-- biceps / triceps -->
+                <path class="muscle" data-muscle="Biceps" d="M132 199 Q153 214 176 196 L166 276 Q154 292 135 277 L116 241Z"/>
+                <path class="muscle" data-muscle="Biceps" d="M288 199 Q267 214 244 196 L254 276 Q266 292 285 277 L304 241Z"/>
+                <path class="muscle" data-muscle="Triceps" d="M113 195 L135 205 L130 278 L106 306 L94 278Z"/>
+                <path class="muscle" data-muscle="Triceps" d="M307 195 L285 205 L290 278 L314 306 L326 278Z"/>
+                <!-- forearms -->
+                <path class="muscle" data-muscle="Forearms" d="M106 306 L130 278 L145 365 L120 410 L93 377Z"/>
+                <path class="muscle" data-muscle="Forearms" d="M314 306 L290 278 L275 365 L300 410 L327 377Z"/>
+                <!-- abs + obliques -->
+                <path class="muscle" data-muscle="Abs" d="M188 215 Q210 222 232 215 L239 334 Q226 351 210 347 Q194 351 181 334Z"/>
+                <path class="muscle" data-muscle="Abs" d="M160 216 Q176 221 184 239 L181 310 L163 300 L149 259Z"/>
+                <path class="muscle" data-muscle="Abs" d="M260 216 Q244 221 236 239 L239 310 L257 300 L271 259Z"/>
+                <path class="body-detail" d="M210 222 L210 346 M184 246 Q197 252 210 248 Q223 252 236 246 M182 275 Q197 281 210 277 Q223 281 238 275 M181 304 Q196 310 210 306 Q224 310 239 304"/>
+                <!-- quads -->
+                <path class="muscle" data-muscle="Quads" d="M181 340 Q198 350 208 345 L203 451 L184 523 Q163 502 157 462 L162 394Z"/>
+                <path class="muscle" data-muscle="Quads" d="M239 340 Q222 350 212 345 L217 451 L236 523 Q257 502 263 462 L258 394Z"/>
+                <path class="body-detail" d="M184 523 Q210 537 236 523"/>
+                <!-- calves -->
+                <path class="muscle" data-muscle="Calves" d="M184 526 Q198 516 207 528 L201 600 L190 660 L169 639 L172 580Z"/>
+                <path class="muscle" data-muscle="Calves" d="M236 526 Q222 516 213 528 L219 600 L230 660 L251 639 L248 580Z"/>
+                <!-- labels -->
+                <path class="anatomy-callout" d="M139 183 L62 183 L32 164"/><text class="anatomy-label" x="8" y="155">Shoulder</text><text class="anatomy-label-sub" x="8" y="169">Deltoids</text>
+                <path class="anatomy-callout" d="M158 187 L74 226 L30 226"/><text class="anatomy-label" x="8" y="218">Upper arm</text><text class="anatomy-label-sub" x="8" y="232">Biceps</text>
+                <path class="anatomy-callout" d="M169 286 L82 292 L28 292"/><text class="anatomy-label" x="8" y="284">Side</text><text class="anatomy-label-sub" x="8" y="298">Obliques</text>
+                <path class="anatomy-callout" d="M162 445 L74 462 L25 462"/><text class="anatomy-label" x="8" y="454">Front thigh</text><text class="anatomy-label-sub" x="8" y="468">Quadriceps</text>
+                <path class="anatomy-callout" d="M260 185 L337 185 L390 162"/><text class="anatomy-label" x="330" y="153">Chest</text><text class="anatomy-label-sub" x="330" y="167">Pectorals</text>
+                <path class="anatomy-callout" d="M270 286 L340 300 L391 300"/><text class="anatomy-label" x="330" y="290">Forearm</text><text class="anatomy-label-sub" x="330" y="304">Wrist flexors</text>
+                <path class="anatomy-callout" d="M246 285 L330 338 L391 338"/><text class="anatomy-label" x="330" y="329">Core</text><text class="anatomy-label-sub" x="330" y="343">Abdominals</text>
+                <path class="anatomy-callout" d="M252 555 L331 570 L391 570"/><text class="anatomy-label" x="330" y="561">Calf</text><text class="anatomy-label-sub" x="330" y="575">Ankle flexors</text>
+                <text x="210" y="688" text-anchor="middle" class="figure-label">FRONT</text>
               </svg>
             </div>
 
             <div class="body-face back">
-              <svg viewBox="0 0 260 600" role="img" aria-label="Back muscle recovery heatmap">
-                <ellipse class="figure-shadow" cx="130" cy="579" rx="63" ry="9"/>
-                <circle class="body-outline" cx="130" cy="53" r="30"/>
-                <path class="body-outline" d="M110 83 Q130 94 150 83 L164 110 Q179 122 184 149 L176 190 L183 255 L169 333 L158 412 L151 486 L130 525 L109 486 L102 412 L91 333 L77 255 L84 190 L76 149 Q81 122 96 110Z"/>
-                <path class="body-outline" d="M84 111 Q62 119 49 142 L30 207 L48 219 L78 168 L98 130Z M176 111 Q198 119 211 142 L230 207 L212 219 L182 168 L162 130Z"/>
-                <path class="body-outline" d="M102 328 L79 356 L72 454 L100 454 L121 397 L139 397 L160 454 L188 454 L181 356 L158 328Z"/>
-                <path class="body-outline" d="M100 454 L96 550 L118 550 L130 521 L142 550 L164 550 L160 454Z"/>
-
-                <path class="muscle" data-muscle="Shoulders" d="M96 112 Q77 117 68 136 Q65 151 78 160 Q91 158 104 143 L111 124Z M164 112 Q183 117 192 136 Q195 151 182 160 Q169 158 156 143 L149 124Z"/>
-                <path class="muscle" data-muscle="Back" d="M109 126 L130 142 L151 126 L158 194 L151 254 L130 273 L109 254 L102 194Z"/>
-                <path class="body-detail" d="M130 143 L130 270 M108 166 L130 178 L152 166 M104 196 Q130 210 156 196"/>
-                <path class="muscle" data-muscle="Triceps" d="M69 155 L80 157 L76 207 L61 218 L58 199Z M191 155 L180 157 L184 207 L199 218 L202 199Z"/>
-                <path class="muscle" data-muscle="Forearms" d="M61 218 L76 207 L82 267 L68 288 L53 268Z M199 218 L184 207 L178 267 L192 288 L207 268Z"/>
-                <path class="muscle" data-muscle="Glutes" d="M104 269 Q130 255 156 269 L160 326 Q148 348 130 348 Q112 348 100 326Z"/>
-                <path class="muscle" data-muscle="Hamstrings" d="M102 342 Q114 350 126 347 L122 414 L108 458 L98 423 L99 377Z M158 342 Q146 350 134 347 L138 414 L152 458 L162 423 L161 377Z"/>
-                <path class="muscle" data-muscle="Calves" d="M103 460 Q113 450 126 447 L122 486 L109 541 L96 516 L97 485Z M157 460 Q147 450 134 447 L138 486 L151 541 L164 516 L163 485Z"/>
-                <text x="130" y="594" text-anchor="middle" class="figure-label">BACK</text>
+              <svg viewBox="0 0 420 700" role="img" aria-label="Back muscular recovery heatmap">
+                <defs>
+                  <linearGradient id="bodySkinBack" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#263337"/><stop offset=".45" stop-color="#182326"/><stop offset="1" stop-color="#0c1214"/></linearGradient>
+                  <radialGradient id="headGlowBack"><stop stop-color="#334145"/><stop offset="1" stop-color="#11191c"/></radialGradient>
+                </defs>
+                <ellipse class="figure-shadow" cx="210" cy="676" rx="92" ry="12"/>
+                <ellipse cx="210" cy="72" rx="37" ry="47" fill="url(#headGlowBack)" class="body-outline"/>
+                <path class="body-base" fill="url(#bodySkinBack)" d="M191 112 Q210 123 229 112 L239 142 Q271 150 293 176 Q303 196 296 227 L284 262 L286 311 L274 350 L266 398 L258 458 L248 531 L238 618 L182 618 L172 531 L162 458 L154 398 L146 350 L134 311 L136 262 L124 227 Q117 196 127 176 Q149 150 181 142Z"/>
+                <path class="body-dark" d="M125 173 Q98 175 83 204 L52 291 Q48 306 61 313 L75 317 L111 243 L145 190Z"/>
+                <path class="body-dark" d="M295 173 Q322 175 337 204 L368 291 Q372 306 359 313 L345 317 L309 243 L275 190Z"/>
+                <path class="body-dark" d="M61 313 L75 317 L91 384 L76 433 L61 420 L50 352Z"/>
+                <path class="body-dark" d="M359 313 L345 317 L329 384 L344 433 L359 420 L370 352Z"/>
+                <path class="body-dark" d="M157 365 Q182 381 210 376 Q238 381 263 365 L279 432 L266 506 L251 579 L239 653 L210 667 L181 653 L169 579 L154 506 L141 432Z"/>
+                <!-- rear delts -->
+                <path class="muscle" data-muscle="Shoulders" d="M181 147 Q153 146 132 169 Q125 186 136 202 Q151 217 176 199 L196 162Z"/>
+                <path class="muscle" data-muscle="Shoulders" d="M239 147 Q267 146 288 169 Q295 186 284 202 Q269 217 244 199 L224 162Z"/>
+                <!-- traps -->
+                <path class="muscle" data-muscle="Back" d="M190 138 L210 157 L230 138 L250 164 L236 213 L210 240 L184 213 L170 164Z"/>
+                <!-- lats -->
+                <path class="muscle" data-muscle="Back" d="M171 188 Q187 207 193 232 L187 344 Q163 350 145 323 L150 246Z"/>
+                <path class="muscle" data-muscle="Back" d="M249 188 Q233 207 227 232 L233 344 Q257 350 275 323 L270 246Z"/>
+                <!-- triceps -->
+                <path class="muscle" data-muscle="Triceps" d="M113 195 L135 205 L130 278 L106 306 L94 278Z"/>
+                <path class="muscle" data-muscle="Triceps" d="M307 195 L285 205 L290 278 L314 306 L326 278Z"/>
+                <!-- forearms -->
+                <path class="muscle" data-muscle="Forearms" d="M106 306 L130 278 L145 365 L120 410 L93 377Z"/>
+                <path class="muscle" data-muscle="Forearms" d="M314 306 L290 278 L275 365 L300 410 L327 377Z"/>
+                <!-- erectors -->
+                <path class="muscle" data-muscle="Back" d="M199 226 Q210 239 221 226 L226 362 Q218 376 210 371 Q202 376 194 362Z"/>
+                <!-- glutes -->
+                <path class="muscle" data-muscle="Glutes" d="M157 348 Q183 334 208 348 L208 431 Q186 447 165 431 Q153 405 157 348Z"/>
+                <path class="muscle" data-muscle="Glutes" d="M263 348 Q237 334 212 348 L212 431 Q234 447 255 431 Q267 405 263 348Z"/>
+                <!-- hamstrings -->
+                <path class="muscle" data-muscle="Hamstrings" d="M166 432 Q187 445 204 431 L201 526 L183 583 Q164 565 158 526 L157 478Z"/>
+                <path class="muscle" data-muscle="Hamstrings" d="M254 432 Q233 445 216 431 L219 526 L237 583 Q256 565 262 526 L263 478Z"/>
+                <!-- calves -->
+                <path class="muscle" data-muscle="Calves" d="M184 579 Q198 567 207 579 L201 623 L190 665 L169 644 L173 610Z"/>
+                <path class="muscle" data-muscle="Calves" d="M236 579 Q222 567 213 579 L219 623 L230 665 L251 644 L247 610Z"/>
+                <path class="body-detail" d="M210 158 L210 371 M183 223 Q210 240 237 223 M189 287 Q210 301 231 287 M210 432 L210 580"/>
+                <!-- labels -->
+                <path class="anatomy-callout" d="M182 177 L80 177 L26 154"/><text class="anatomy-label" x="8" y="146">Upper back</text><text class="anatomy-label-sub" x="8" y="160">Trapezius</text>
+                <path class="anatomy-callout" d="M168 250 L78 250 L26 228"/><text class="anatomy-label" x="8" y="220">Middle back</text><text class="anatomy-label-sub" x="8" y="234">Latissimus dorsi</text>
+                <path class="anatomy-callout" d="M190 325 L82 325 L26 304"/><text class="anatomy-label" x="8" y="296">Lower back</text><text class="anatomy-label-sub" x="8" y="310">Erector spinae</text>
+                <path class="anatomy-callout" d="M236 221 L328 221 L390 198"/><text class="anatomy-label" x="322" y="190">Back of arm</text><text class="anatomy-label-sub" x="322" y="204">Triceps</text>
+                <path class="anatomy-callout" d="M272 324 L340 340 L392 340"/><text class="anatomy-label" x="322" y="331">Back of forearm</text><text class="anatomy-label-sub" x="322" y="345">Wrist extensors</text>
+                <path class="anatomy-callout" d="M252 394 L332 392 L392 392"/><text class="anatomy-label" x="322" y="383">Buttocks</text><text class="anatomy-label-sub" x="322" y="397">Gluteals</text>
+                <path class="anatomy-callout" d="M252 495 L332 506 L392 506"/><text class="anatomy-label" x="322" y="497">Back of thigh</text><text class="anatomy-label-sub" x="322" y="511">Hamstrings</text>
+                <path class="anatomy-callout" d="M250 606 L334 620 L392 620"/><text class="anatomy-label" x="322" y="612">Calf</text><text class="anatomy-label-sub" x="322" y="626">Ankle extensors</text>
+                <text x="210" y="688" text-anchor="middle" class="figure-label">BACK</text>
               </svg>
             </div>
           </div>
@@ -252,15 +324,15 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 6px
         <div class="anatomy-controls">
           <button id="viewFrontBtn" class="btn small active" onclick="setAnatomyView('front')">Front</button>
           <button id="viewBackBtn" class="btn small" onclick="setAnatomyView('back')">Back</button>
-          <button class="btn small" onclick="setAnatomyView('reset')">Reset</button>
+          <button class="btn small" onclick="setAnatomyView('reset')">Reset View</button>
         </div>
-        <div class="anatomy-hint">Drag with your finger or mouse to explore • tap a muscle for details</div>
+        <div class="anatomy-hint">Drag with your finger or mouse to rotate • tap a muscle for details</div>
       </div>
       <div class="muscle-selected" id="muscleSelected">Select a muscle</div>
     </div>
 
     <div class="card recovery-card">
-      <div class="row"><h3>Recovery status</h3><span class="muted">0–100%</span></div>
+      <div class="row"><div><h3>Muscle Recovery</h3><span class="muted">Overall readiness by muscle group</span></div></div>
       <div id="recoveryList"></div>
     </div>
   </div>

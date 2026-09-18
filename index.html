@@ -28,45 +28,48 @@ select{background:#0b0d0e;color:var(--text);border:1px solid var(--line);border-
 table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 6px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-size:12px}
 .notice{padding:12px;border:1px dashed #45504e;border-radius:12px;color:var(--muted);font-size:13px}
 
-.manual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.manual-field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.manual-field input,.manual-field select{width:100%}.manual-entry{padding:11px 0;border-bottom:1px solid var(--line)}.manual-entry:last-child{border-bottom:0}.exercise-entry{display:grid;grid-template-columns:1.5fr .7fr .7fr auto;gap:7px;align-items:end;margin:8px 0}.activity-pill{font-size:10px;border:1px solid var(--line);border-radius:999px;padding:4px 7px;color:var(--muted)}
+.manual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.manual-field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.manual-field input,.manual-field select{width:100%}.manual-entry{padding:11px 0;border-bottom:1px solid var(--line)}.manual-entry:last-child{border-bottom:0}.exercise-entry{display:grid;grid-template-columns:1.7fr .65fr .8fr .65fr auto;gap:7px;align-items:end;margin:8px 0}.activity-pill{font-size:10px;border:1px solid var(--line);border-radius:999px;padding:4px 7px;color:var(--muted)}
 @media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr)}.set{grid-template-columns:34px 1fr 1fr 42px}.hero h2{font-size:25px}}
 
- .anatomy-wrap{display:grid;grid-template-columns:1.35fr .65fr;gap:14px}
+ .anatomy-wrap{display:grid;grid-template-columns:1.28fr .72fr;gap:14px}
 .anatomy-card{overflow:hidden;background:linear-gradient(145deg,#101719,#07090a);border:1px solid #2b3537;box-shadow:0 18px 55px #0008}
-.anatomy-stage{height:690px;display:flex;align-items:center;justify-content:center;perspective:1500px;touch-action:none;cursor:grab;user-select:none;overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 42%,#26302d 0,#0c1112 42%,#07090a 78%);border-radius:18px}
-.anatomy-stage:before{content:'';position:absolute;inset:16px;border:1px solid #ffffff0b;border-radius:18px;box-shadow:inset 0 0 100px #000a}
+.anatomy-stage{min-height:700px;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:grab;user-select:none;overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 42%,#1d2a26 0,#0c1112 42%,#07090a 78%);border-radius:18px;padding:34px 18px 20px}
+.anatomy-stage:before{content:'';position:absolute;inset:14px;border:1px solid #ffffff0a;border-radius:18px;box-shadow:inset 0 0 110px #000b;pointer-events:none}
 .anatomy-stage.dragging{cursor:grabbing}
-.anatomy-stage:after{content:'LIVE MUSCLE HEATMAP';position:absolute;left:18px;top:17px;font-size:10px;letter-spacing:4px;color:#aeb9b5;opacity:.8}
-.anatomy-orbit{width:570px;height:640px;position:relative;transform-style:preserve-3d;transition:transform .08s linear;z-index:2;display:flex;align-items:center;justify-content:center;gap:8px}
-.anatomy-orbit:after{content:'';position:absolute;left:50%;bottom:5px;width:420px;height:38px;transform:translateX(-50%);border-radius:50%;background:#000;filter:blur(20px);opacity:.8}
-.body-face{position:relative;width:280px;height:620px;display:flex;align-items:center;justify-content:center;transform-style:preserve-3d}
-.body-face.back{position:relative;transform:none}
-.body-face svg{width:270px;height:610px;overflow:visible;filter:drop-shadow(0 22px 24px #000c)}
-.body-sil{fill:url(#bodyGrad);stroke:#6e7a7a;stroke-width:2.2}
-.muscle{fill:#4c5657;stroke:#899392;stroke-width:1.8;cursor:pointer;transition:fill .22s,filter .22s,stroke .22s,transform .22s}
-.muscle:hover{filter:brightness(1.35);stroke:#fff;stroke-width:2.4}
+.anatomy-stage:after{content:'LIVE MUSCLE HEATMAP';position:absolute;left:20px;top:18px;font-size:10px;letter-spacing:4px;color:#aeb9b5;opacity:.8}
+.anatomy-glow{position:absolute;width:520px;height:560px;border-radius:50%;background:radial-gradient(ellipse,#4bd87a0c,transparent 66%);pointer-events:none}
+.anatomy-orbit{width:100%;max-width:610px;height:620px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:end;justify-items:center;z-index:2;transition:transform .12s ease;transform-origin:center bottom}
+.body-face{position:relative;width:100%;max-width:285px;height:600px;display:flex;align-items:center;justify-content:center}
+.body-face svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 22px 24px #000d)}
+.body-outline{fill:#111719;stroke:#657171;stroke-width:2.1;stroke-linejoin:round}
+.body-detail{fill:none;stroke:#566363;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.muscle{fill:#2d3738;stroke:#7e8a88;stroke-width:1.25;cursor:pointer;transition:fill .2s,filter .2s,stroke .2s,opacity .2s}
+.muscle:hover{filter:brightness(1.2);stroke:#fff;stroke-width:1.8}
 .muscle.recovery-red{fill:#ff5c63;stroke:#ff9a9e;filter:drop-shadow(0 0 10px #ff5c6366)}
 .muscle.recovery-orange{fill:#ff9a3d;stroke:#ffc27d;filter:drop-shadow(0 0 9px #ff9a3d55)}
 .muscle.recovery-yellow{fill:#f5d943;stroke:#fff09a;filter:drop-shadow(0 0 8px #f5d94344)}
 .muscle.recovery-green{fill:#4bd87a;stroke:#9af0b7;filter:drop-shadow(0 0 9px #4bd87a44)}
-.muscle.hot{filter:drop-shadow(0 0 12px #ff5c6380)}
+.muscle.hot{filter:drop-shadow(0 0 13px #ff5c6380)}
 .muscle.warn{filter:drop-shadow(0 0 10px #ff9a3d70)}
 .muscle.ready{filter:drop-shadow(0 0 9px #4bd87a50)}
-.heat-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 4px 0}
-.heat-key{display:flex;align-items:center;gap:6px;font-size:10px;color:#aab4b1}
-.heat-dot{width:10px;height:10px;border-radius:50%;box-shadow:0 0 8px currentColor}
+.muscle.pulse{animation:musclePulse 1.05s ease-in-out infinite}
+@keyframes musclePulse{50%{filter:brightness(1.22) drop-shadow(0 0 16px currentColor)}}
+.figure-label{font-size:10px;letter-spacing:3px;fill:#899491}
+.figure-shadow{fill:#000;opacity:.55;filter:blur(5px)}
+.heat-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 4px 0}
+.heat-key{display:flex;align-items:center;gap:7px;font-size:10px;color:#aab4b1;line-height:1.25}
+.heat-dot{width:10px;height:10px;border-radius:50%;box-shadow:0 0 8px currentColor;flex:0 0 auto}
 .heat-dot.red{background:#ff5c63;color:#ff5c63}.heat-dot.orange{background:#ff9a3d;color:#ff9a3d}.heat-dot.yellow{background:#f5d943;color:#f5d943}.heat-dot.green{background:#4bd87a;color:#4bd87a}
 .anatomy-controls{display:flex;gap:8px;justify-content:center;margin:13px 0 9px}.anatomy-controls .btn{min-width:88px}.anatomy-controls .btn.active{background:#1d2b2a;border-color:#6d7c79;box-shadow:0 0 0 1px #ffffff12 inset}
 .anatomy-hint{text-align:center;color:var(--muted);font-size:11px;margin-top:0}
-.anatomy-glow{position:absolute;width:470px;height:560px;border-radius:50%;background:radial-gradient(ellipse,#4bd87a10,transparent 66%);pointer-events:none}
 .anatomy{padding:10px}.muscle-selected{margin:8px 0 0;padding:15px;border:1px solid #2d3838;border-radius:14px;color:var(--muted);text-align:center;background:linear-gradient(135deg,#0d1112,#111718)}
 .rec-row{padding:13px 0;border-bottom:1px solid var(--line)}.rec-row:last-child{border-bottom:0}.rec-name{font-weight:750}.rec-meta{font-size:11px;color:var(--muted)}.rec-bar{height:10px;background:#202627;border-radius:99px;overflow:hidden;margin-top:8px;box-shadow:inset 0 1px 2px #000}.rec-bar i{display:block;height:100%;border-radius:99px;transition:width .5s}.rec-bar i.red{background:linear-gradient(90deg,#ff5c63,#ff777d)}.rec-bar i.orange{background:linear-gradient(90deg,#ff8b32,#ffb35f)}.rec-bar i.yellow{background:linear-gradient(90deg,#d8be2e,#f5d943)}.rec-bar i.green{background:linear-gradient(90deg,#38b967,#4bd87a)}
-.recovery-chip{font-size:11px;padding:4px 8px;border-radius:999px;background:#202627;color:var(--muted)}.recovery-chip.ready{color:#7ff09e}.recovery-chip.low{color:#ffb05f}.workout .exercise{animation:rise .35s ease both}.workout .exercise:nth-child(2){animation-delay:.04s}.workout .exercise:nth-child(3){animation-delay:.08s}.workout .exercise:nth-child(4){animation-delay:.12s}.workout .exercise:nth-child(5){animation-delay:.16s}.workout .exercise:nth-child(6){animation-delay:.2s}@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}.pulse{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.035)}}.exercise.done-card{border-color:#536326;box-shadow:0 0 0 1px #d7ff3f22,0 8px 24px #d7ff3f08}
-@media(max-width:760px){.anatomy-wrap{grid-template-columns:1fr}.anatomy-card{order:0}.recovery-card{order:1}}
+.recovery-chip{font-size:11px;padding:4px 8px;border-radius:999px;background:#202627;color:var(--muted)}.recovery-chip.ready{color:#7ff09e}.recovery-chip.low{color:#ffb05f}.workout .exercise{animation:rise .35s ease both}.workout .exercise:nth-child(2){animation-delay:.04s}.workout .exercise:nth-child(3){animation-delay:.08s}.workout .exercise:nth-child(4){animation-delay:.12s}.workout .exercise:nth-child(5){animation-delay:.16s}.workout .exercise:nth-child(6){animation-delay:.2s}@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}.exercise.done-card{border-color:#536326;box-shadow:0 0 0 1px #d7ff3f22,0 8px 24px #d7ff3f08}
+@media(max-width:760px){.anatomy-wrap{grid-template-columns:1fr}.anatomy-card{order:0}.recovery-card{order:1}.anatomy-stage{min-height:610px;padding:30px 5px 15px}.anatomy-orbit{height:545px;gap:0}.body-face{height:535px}.heat-legend{grid-template-columns:repeat(2,1fr)}}
 
 .exercise-bank-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.bank-card{background:#101313;border:1px solid var(--line);border-radius:14px;padding:14px}.bank-card h3{margin:0 0 5px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#202627;color:var(--muted)}.filters{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:8px}.program-day{border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;background:#101313}.program-ex{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);gap:8px}.program-ex:last-child{border-bottom:0}.builder-row{display:grid;grid-template-columns:1.4fr .6fr .7fr auto;gap:7px;align-items:end}.mini{font-size:11px;color:var(--muted)}.empty{padding:22px;text-align:center;border:1px dashed #45504e;border-radius:14px;color:var(--muted)}
 
-.manual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.manual-field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.manual-field input,.manual-field select{width:100%}.manual-entry{padding:11px 0;border-bottom:1px solid var(--line)}.manual-entry:last-child{border-bottom:0}.exercise-entry{display:grid;grid-template-columns:1.5fr .7fr .7fr auto;gap:7px;align-items:end;margin:8px 0}.activity-pill{font-size:10px;border:1px solid var(--line);border-radius:999px;padding:4px 7px;color:var(--muted)}
+.manual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.manual-field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.manual-field input,.manual-field select{width:100%}.manual-entry{padding:11px 0;border-bottom:1px solid var(--line)}.manual-entry:last-child{border-bottom:0}.exercise-entry{display:grid;grid-template-columns:1.7fr .65fr .8fr .65fr auto;gap:7px;align-items:end;margin:8px 0}.activity-pill{font-size:10px;border:1px solid var(--line);border-radius:999px;padding:4px 7px;color:var(--muted)}
 @media(max-width:650px){.manual-grid{grid-template-columns:1fr}.exercise-entry{grid-template-columns:1fr 1fr auto}.exercise-bank-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.builder-row{grid-template-columns:1fr 1fr auto}.builder-row select{grid-column:1/-1}}
 </style>
 </head>
@@ -197,42 +200,45 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 6px
           <div class="anatomy-glow"></div>
           <div class="anatomy-orbit" id="anatomyOrbit">
             <div class="body-face front">
-              <svg viewBox="0 0 300 620" role="img" aria-label="Front muscle recovery heatmap">
-                <defs><linearGradient id="bodyGradFrontNew" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#566163"/><stop offset=".48" stop-color="#30383a"/><stop offset="1" stop-color="#14191a"/></linearGradient><radialGradient id="skinGlowFrontNew"><stop stop-color="#738080"/><stop offset="1" stop-color="#202728"/></radialGradient></defs>
-                <ellipse cx="150" cy="592" rx="70" ry="10" fill="#000" opacity=".55"/>
-                <circle cx="150" cy="48" r="29" class="body-sil" fill="url(#skinGlowFrontNew)"/>
-                <path class="body-sil" d="M126 78 Q150 92 174 78 L194 111 L186 174 L191 247 L179 322 L167 407 L158 488 L150 540 L142 488 L133 407 L121 322 L109 247 L114 174 L106 111Z" fill="url(#bodyGradFrontNew)"/>
-                <path class="body-sil" d="M108 108 Q82 119 67 143 L45 213 L65 226 L105 161 L124 133Z M192 108 Q218 119 233 143 L255 213 L235 226 L195 161 L176 133Z"/>
-                <path class="body-sil" d="M121 318 L93 351 L83 454 L110 454 L143 350 M179 318 L207 351 L217 454 L190 454 L157 350Z"/>
-                <path class="body-sil" d="M110 454 L104 548 L132 548 L150 510 L168 548 L196 548 L190 454Z"/>
-                <path class="muscle" data-muscle="Shoulders" d="M112 110 Q91 115 78 137 L72 160 Q92 174 116 155 L128 128Z M188 110 Q209 115 222 137 L228 160 Q208 174 184 155 L172 128Z"/>
-                <path class="muscle" data-muscle="Chest" d="M125 129 Q150 113 175 129 L171 168 Q150 181 129 168Z"/>
-                <path class="muscle" data-muscle="Biceps" d="M79 157 Q96 170 116 155 L108 211 Q91 220 75 205Z M221 157 Q204 170 184 155 L192 211 Q209 220 225 205Z"/>
-                <path class="muscle" data-muscle="Triceps" d="M75 157 L88 154 L79 211 L63 224 L65 205Z M225 157 L212 154 L221 211 L237 224 L235 205Z"/>
-                <path class="muscle" data-muscle="Forearms" d="M63 224 L79 211 L88 268 L73 292 L58 272Z M237 224 L221 211 L212 268 L227 292 L242 272Z"/>
-                <path class="muscle" data-muscle="Abs" d="M131 174 L169 174 L173 270 Q150 282 127 270Z"/>
-                <path class="muscle" data-muscle="Quads" d="M127 272 Q139 280 150 276 L145 356 L119 414 L103 370 L111 320Z M173 272 Q161 280 150 276 L155 356 L181 414 L197 370 L189 320Z"/>
-                <path class="muscle" data-muscle="Calves" d="M111 414 L130 401 L127 492 L109 551 L94 524 L97 465Z M189 414 L170 401 L173 492 L191 551 L206 524 L203 465Z"/>
-                <text x="150" y="613" text-anchor="middle" fill="#899491" font-size="9" letter-spacing="2">FRONT</text>
+              <svg viewBox="0 0 260 600" role="img" aria-label="Front muscle recovery heatmap">
+                <ellipse class="figure-shadow" cx="130" cy="579" rx="63" ry="9"/>
+                <circle class="body-outline" cx="130" cy="53" r="30"/>
+                <path class="body-outline" d="M110 83 Q130 94 150 83 L164 110 Q179 122 184 149 L176 190 L183 255 L169 333 L158 412 L151 486 L130 525 L109 486 L102 412 L91 333 L77 255 L84 190 L76 149 Q81 122 96 110Z"/>
+                <path class="body-outline" d="M84 111 Q62 119 49 142 L30 207 L48 219 L78 168 L98 130Z M176 111 Q198 119 211 142 L230 207 L212 219 L182 168 L162 130Z"/>
+                <path class="body-outline" d="M102 328 L79 356 L72 454 L100 454 L121 397 L139 397 L160 454 L188 454 L181 356 L158 328Z"/>
+                <path class="body-outline" d="M100 454 L96 550 L118 550 L130 521 L142 550 L164 550 L160 454Z"/>
+
+                <path class="muscle" data-muscle="Shoulders" d="M96 112 Q77 117 68 136 Q65 151 78 160 Q91 158 104 143 L111 124Z M164 112 Q183 117 192 136 Q195 151 182 160 Q169 158 156 143 L149 124Z"/>
+                <path class="muscle" data-muscle="Chest" d="M112 126 Q130 115 148 126 L153 159 Q142 172 130 168 Q118 172 107 159Z"/>
+                <path class="muscle" data-muscle="Biceps" d="M79 157 Q92 162 104 145 L99 205 Q91 216 77 206 L70 187Z M181 157 Q168 162 156 145 L161 205 Q169 216 183 206 L190 187Z"/>
+                <path class="muscle" data-muscle="Triceps" d="M69 155 L80 157 L76 207 L61 218 L58 199Z M191 155 L180 157 L184 207 L199 218 L202 199Z"/>
+                <path class="muscle" data-muscle="Forearms" d="M61 218 L76 207 L82 267 L68 288 L53 268Z M199 218 L184 207 L178 267 L192 288 L207 268Z"/>
+                <path class="muscle" data-muscle="Abs" d="M113 169 L147 169 L150 258 Q130 269 110 258Z"/>
+                <path class="body-detail" d="M130 171 L130 258 M112 190 Q130 197 148 190 M112 216 Q130 223 148 216 M111 241 Q130 248 149 241"/>
+                <path class="muscle" data-muscle="Quads" d="M111 265 Q120 272 130 269 L126 345 L109 406 Q99 387 98 356 L103 306Z M149 265 Q140 272 130 269 L134 345 L151 406 Q161 387 162 356 L157 306Z"/>
+                <path class="muscle" data-muscle="Calves" d="M103 408 Q113 399 126 394 L122 486 L109 541 L96 516 L97 461Z M157 408 Q147 399 134 394 L138 486 L151 541 L164 516 L163 461Z"/>
+                <text x="130" y="594" text-anchor="middle" class="figure-label">FRONT</text>
               </svg>
             </div>
+
             <div class="body-face back">
-              <svg viewBox="0 0 300 620" role="img" aria-label="Back muscle recovery heatmap">
-                <defs><linearGradient id="bodyGradBackNew" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#566163"/><stop offset=".48" stop-color="#30383a"/><stop offset="1" stop-color="#14191a"/></linearGradient></defs>
-                <ellipse cx="150" cy="592" rx="70" ry="10" fill="#000" opacity=".55"/>
-                <circle cx="150" cy="48" r="29" class="body-sil" fill="url(#bodyGradBackNew)"/>
-                <path class="body-sil" d="M126 78 Q150 92 174 78 L194 111 L186 174 L191 247 L179 322 L167 407 L158 488 L150 540 L142 488 L133 407 L121 322 L109 247 L114 174 L106 111Z" fill="url(#bodyGradBackNew)"/>
-                <path class="body-sil" d="M108 108 Q82 119 67 143 L45 213 L65 226 L105 161 L124 133Z M192 108 Q218 119 233 143 L255 213 L235 226 L195 161 L176 133Z"/>
-                <path class="body-sil" d="M121 318 L93 351 L83 454 L110 454 L143 350 M179 318 L207 351 L217 454 L190 454 L157 350Z"/>
-                <path class="body-sil" d="M110 454 L104 548 L132 548 L150 510 L168 548 L196 548 L190 454Z"/>
-                <path class="muscle" data-muscle="Shoulders" d="M112 110 Q91 115 78 137 L72 160 Q92 174 116 155 L128 128Z M188 110 Q209 115 222 137 L228 160 Q208 174 184 155 L172 128Z"/>
-                <path class="muscle" data-muscle="Back" d="M128 130 L150 147 L172 130 L181 232 Q165 270 150 289 Q135 270 119 232Z"/>
-                <path class="muscle" data-muscle="Triceps" d="M75 157 L88 154 L79 211 L63 224 L65 205Z M225 157 L212 154 L221 211 L237 224 L235 205Z"/>
-                <path class="muscle" data-muscle="Forearms" d="M63 224 L79 211 L88 268 L73 292 L58 272Z M237 224 L221 211 L212 268 L227 292 L242 272Z"/>
-                <path class="muscle" data-muscle="Glutes" d="M119 276 Q150 260 181 276 L178 342 Q150 363 122 342Z"/>
-                <path class="muscle" data-muscle="Hamstrings" d="M122 344 Q137 360 148 356 L142 421 L116 449 L104 416 L111 370Z M178 344 Q163 360 152 356 L158 421 L184 449 L196 416 L189 370Z"/>
-                <path class="muscle" data-muscle="Calves" d="M111 414 L130 401 L127 492 L109 551 L94 524 L97 465Z M189 414 L170 401 L173 492 L191 551 L206 524 L203 465Z"/>
-                <text x="150" y="613" text-anchor="middle" fill="#899491" font-size="9" letter-spacing="2">BACK</text>
+              <svg viewBox="0 0 260 600" role="img" aria-label="Back muscle recovery heatmap">
+                <ellipse class="figure-shadow" cx="130" cy="579" rx="63" ry="9"/>
+                <circle class="body-outline" cx="130" cy="53" r="30"/>
+                <path class="body-outline" d="M110 83 Q130 94 150 83 L164 110 Q179 122 184 149 L176 190 L183 255 L169 333 L158 412 L151 486 L130 525 L109 486 L102 412 L91 333 L77 255 L84 190 L76 149 Q81 122 96 110Z"/>
+                <path class="body-outline" d="M84 111 Q62 119 49 142 L30 207 L48 219 L78 168 L98 130Z M176 111 Q198 119 211 142 L230 207 L212 219 L182 168 L162 130Z"/>
+                <path class="body-outline" d="M102 328 L79 356 L72 454 L100 454 L121 397 L139 397 L160 454 L188 454 L181 356 L158 328Z"/>
+                <path class="body-outline" d="M100 454 L96 550 L118 550 L130 521 L142 550 L164 550 L160 454Z"/>
+
+                <path class="muscle" data-muscle="Shoulders" d="M96 112 Q77 117 68 136 Q65 151 78 160 Q91 158 104 143 L111 124Z M164 112 Q183 117 192 136 Q195 151 182 160 Q169 158 156 143 L149 124Z"/>
+                <path class="muscle" data-muscle="Back" d="M109 126 L130 142 L151 126 L158 194 L151 254 L130 273 L109 254 L102 194Z"/>
+                <path class="body-detail" d="M130 143 L130 270 M108 166 L130 178 L152 166 M104 196 Q130 210 156 196"/>
+                <path class="muscle" data-muscle="Triceps" d="M69 155 L80 157 L76 207 L61 218 L58 199Z M191 155 L180 157 L184 207 L199 218 L202 199Z"/>
+                <path class="muscle" data-muscle="Forearms" d="M61 218 L76 207 L82 267 L68 288 L53 268Z M199 218 L184 207 L178 267 L192 288 L207 268Z"/>
+                <path class="muscle" data-muscle="Glutes" d="M104 269 Q130 255 156 269 L160 326 Q148 348 130 348 Q112 348 100 326Z"/>
+                <path class="muscle" data-muscle="Hamstrings" d="M102 342 Q114 350 126 347 L122 414 L108 458 L98 423 L99 377Z M158 342 Q146 350 134 347 L138 414 L152 458 L162 423 L161 377Z"/>
+                <path class="muscle" data-muscle="Calves" d="M103 460 Q113 450 126 447 L122 486 L109 541 L96 516 L97 485Z M157 460 Q147 450 134 447 L138 486 L151 541 L164 516 L163 485Z"/>
+                <text x="130" y="594" text-anchor="middle" class="figure-label">BACK</text>
               </svg>
             </div>
           </div>
@@ -446,7 +452,7 @@ function renderManualForm(){
 }
 function addManualStrengthRow(){manualStrengthRows.push({exercise:"",sets:"",weight:"",reps:""});renderManualStrengthRows()}
 function removeManualStrengthRow(i){manualStrengthRows.splice(i,1);if(!manualStrengthRows.length)manualStrengthRows=[{exercise:"",sets:"",weight:"",reps:""}];renderManualStrengthRows()}
-function renderManualStrengthRows(){const box=document.getElementById("manualStrengthRows");if(!box)return;box.innerHTML=manualStrengthRows.map((r,i)=>`<div class="exercise-entry"><div class="manual-field"><label>Exercise</label><input value="${r.exercise.replace(/"/g,'&quot;')}" onchange="manualStrengthRows[${i}].exercise=this.value" placeholder="e.g. Bench Press"></div><div class="manual-field"><label>Sets</label><input type="number" min="1" value="${r.sets}" onchange="manualStrengthRows[${i}].sets=this.value"></div><div class="manual-field"><label>Weight × reps</label><input value="${r.weight}${r.weight&&r.reps?' × ':''}${r.reps}" onchange="updateManualWeightReps(${i},this.value)" placeholder="80 × 10"></div><button class="btn small danger" onclick="removeManualStrengthRow(${i})">×</button></div>`).join("")}
+function renderManualStrengthRows(){const box=document.getElementById("manualStrengthRows");if(!box)return;box.innerHTML=manualStrengthRows.map((r,i)=>`<div class="exercise-entry"><div class="manual-field"><label>Exercise</label><select onchange="manualStrengthRows[${i}].exercise=this.value"><option value="">Choose exercise…</option>${exerciseBank.map(e=>`<option value="${e[0].replace(/"/g,"&quot;")}" ${e[0]===r.exercise?"selected":""}>${e[0]} · ${e[1]}</option>`).join("")}</select></div><div class="manual-field"><label>Sets</label><input type="number" min="1" value="${r.sets}" onchange="manualStrengthRows[${i}].sets=this.value"></div><div class="manual-field"><label>Weight (kg)</label><input type="number" min="0" step="0.5" value="${r.weight}" onchange="manualStrengthRows[${i}].weight=this.value" placeholder="80"></div><div class="manual-field"><label>Reps</label><input type="number" min="1" value="${r.reps}" onchange="manualStrengthRows[${i}].reps=this.value" placeholder="10"></div><button class="btn small danger" onclick="removeManualStrengthRow(${i})">×</button></div>`).join("")}
 function updateManualWeightReps(i,v){const parts=v.split(/\s*[x×]\s*/i);manualStrengthRows[i].weight=parts[0]||"";manualStrengthRows[i].reps=parts[1]||""}
 function saveManualStrength(){const date=document.getElementById("manualDate").value||new Date().toISOString(),name=document.getElementById("manualName").value.trim()||"Weightlifting",rows=manualStrengthRows.filter(r=>r.exercise.trim()),sets=rows.reduce((a,r)=>a+(Number(r.sets)||0),0);if(!rows.length){alert("Add at least one exercise.");return}const volumeByMuscle={};rows.forEach(r=>{const match=exerciseBank.find(e=>e[0].toLowerCase()===r.exercise.trim().toLowerCase());const muscle=match?.[1]||"Other";const n=Number(r.sets)||0;if(n)volumeByMuscle[muscle]=(volumeByMuscle[muscle]||0)+n;});state.logs.unshift({date:new Date(date).toISOString(),activityType:"strength",dayName:name,programName:"Manual",sets,volumeByMuscle,manualExercises:JSON.parse(JSON.stringify(rows)),duration:Number(document.getElementById("manualDuration").value)||0,notes:document.getElementById("manualNotes").value||""});state.logs=state.logs.slice(0,100);save();manualStrengthRows=[{exercise:"",sets:"",weight:"",reps:""}];renderManualHistory();renderProgress();renderRecovery();alert("Weightlifting workout saved — recovery updated.")}
 function saveManualEndurance(){const type=document.getElementById("manualType").value,date=document.getElementById("manualDate").value||new Date().toISOString(),name=document.getElementById("manualName").value.trim()||(type==="cycling"?"Bike Ride":"Cardio"),duration=Number(document.getElementById("manualDuration").value)||0,distance=Number(document.getElementById("manualDistance").value)||0; if(!duration&&!distance){alert("Enter at least a duration or distance.");return}state.logs.unshift({date:new Date(date).toISOString(),activityType:type,dayName:name,programName:"Manual",sets:0,volumeByMuscle:type==="cycling"?{Quads:1,Hamstrings:1,Glutes:1,Calves:1}:{},duration,distance,avgSpeed:Number(document.getElementById("manualAvgSpeed")?.value)||0,elevation:Number(document.getElementById("manualElevation")?.value)||0,avgHR:Number(document.getElementById("manualHR")?.value)||0,maxHR:Number(document.getElementById("manualMaxHR")?.value)||0,calories:Number(document.getElementById("manualCalories")?.value)||0,notes:document.getElementById("manualNotes").value||""});state.logs=state.logs.slice(0,100);save();renderManualHistory();renderProgress();alert(`${name} saved.`)}
@@ -457,34 +463,43 @@ function renderProgress(){
  document.getElementById("history").innerHTML=state.logs.length?state.logs.map(x=>{const extra=x.activityType==="cycling"?`${x.distance||0} km · ${x.duration||0} min`:x.activityType==="strength"&&x.programName==="Manual"?`${x.sets} sets · manual`: `${x.sets} sets`;return `<div class="row" style="padding:10px 0;border-bottom:1px solid var(--line)"><span><strong>${x.programName||"ASCEND"} · ${x.dayName||labels[x.type]||"Workout"}</strong><br><small class="muted">${new Date(x.date).toLocaleString()}</small></span><span>${extra}</span></div>`}).join(""):"<p class='muted'>No workouts logged yet.</p>";
 }
 function recoveryData(){
- // Recovery is a rolling training-stress estimate. It intentionally does NOT jump to 100% the day after training.
- // Harder/larger sessions create more stress; stress decays gradually over ~72–96 hours.
+ // Practical recovery model: each trained set creates local fatigue that decays over ~48–72 h.
+ // Recent hard sessions therefore cannot display 100% the next day. Secondary muscles receive a smaller load.
  const now=Date.now(), load={};muscleNames.forEach(m=>load[m]=0);
  const secondary={
-   'Chest':['Triceps','Shoulders'], 'Back':['Biceps','Shoulders'], 'Shoulders':['Triceps'],
-   'Quads':['Glutes'], 'Hamstrings':['Glutes'], 'Glutes':['Hamstrings'], 'Biceps':[], 'Triceps':[], 'Calves':[], 'Abs':[]
+   Chest:['Triceps','Shoulders'], Back:['Biceps','Shoulders'], Shoulders:['Triceps'],
+   Quads:['Glutes'], Hamstrings:['Glutes'], Glutes:['Hamstrings'],
+   Biceps:[], Triceps:['Shoulders'], Forearms:[], Calves:[], Abs:[]
  };
  state.logs.forEach(log=>{
-   let ts=new Date(log.date).getTime(); if(!Number.isFinite(ts)) return;
-   const ageH=Math.max(0,(now-ts)/3600000); if(ageH>120 || !log.volumeByMuscle) return;
-   const decay=Math.exp(-ageH/42); // ~55% of original stress remains after 24h, ~24% after 60h
+   const ts=new Date(log.date).getTime(); if(!Number.isFinite(ts)||!log.volumeByMuscle)return;
+   const ageH=(now-ts)/3600000;
+   if(ageH<0 || ageH>168)return;
+   const decay=Math.exp(-ageH/40); // ~55% stress remains after 24 h; ~17% after 70 h
    Object.entries(log.volumeByMuscle).forEach(([m,sets])=>{
-     if(!load.hasOwnProperty(m)) return;
-     const s=Math.max(0,Number(sets)||0);
-     // 3–10 hard sets in a session meaningfully affect recovery.
-     load[m]+=s*9*decay;
-     (secondary[m]||[]).forEach(sec=>{ if(load.hasOwnProperty(sec)) load[sec]+=s*1.8*decay; });
+     if(!Object.prototype.hasOwnProperty.call(load,m))return;
+     const s=Math.max(0,Number(sets)||0); if(!s)return;
+     // Diminishing returns prevents very large sessions from overwhelming the scale.
+     const effectiveSets=Math.min(14,s);
+     const sessionStress=(effectiveSets*5.0 + Math.max(0,effectiveSets-8)*1.2)*decay;
+     load[m]+=sessionStress;
+     (secondary[m]||[]).forEach(sec=>{if(Object.prototype.hasOwnProperty.call(load,sec))load[sec]+=sessionStress*.22;});
    });
    if(log.activityType==='cycling'){
-     const duration=Number(log.duration)||0, elev=Number(log.elevation)||0;
-     const rideLoad=Math.min(8,(duration/45)+(elev/1000));
-     ['Quads','Hamstrings','Glutes','Calves'].forEach(m=>load[m]+=rideLoad*2.2*decay);
+     const duration=Number(log.duration)||0,elev=Number(log.elevation)||0;
+     const rideLoad=Math.min(10,(duration/35)+(elev/700));
+     ['Quads','Hamstrings','Glutes','Calves'].forEach(m=>load[m]+=rideLoad*3.2*decay);
+   }
+   if(log.activityType==='cardio'){
+     const duration=Number(log.duration)||0;
+     const cardioLoad=Math.min(5,duration/30);
+     ['Quads','Calves'].forEach(m=>load[m]+=cardioLoad*1.5*decay);
    }
  });
- const fatigueAdj=Math.max(0,(Number(state.fatigue)||3)-3)*3;
+ const subjective=Math.max(0,(Number(state.fatigue)||3)-3)*2.5;
  const result={};
  muscleNames.forEach(m=>{
-   const stress=Math.min(100,load[m]+fatigueAdj);
+   const stress=Math.min(100,load[m]+subjective);
    result[m]=Math.max(0,Math.round(100-stress));
  });
  return result;
